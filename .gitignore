@@ -1,0 +1,66 @@
+# Dependencies
+node_modules
+/dist
+/tmp
+/out-tsc
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Uploads (don't commit uploaded files)
+uploads/*
+!uploads/.gitkeep
+
+# Build output
+dist
+build
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Testing scripts (keep seeders but exclude test scripts)
+check-*.js
+fix-*.js
+remove-*.js
+get-otp.js
