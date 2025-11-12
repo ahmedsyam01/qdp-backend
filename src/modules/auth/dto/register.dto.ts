@@ -1,5 +1,6 @@
-import { IsString, IsEmail, IsNotEmpty, MinLength, Matches } from 'class-validator';
+import { IsString, IsEmail, IsNotEmpty, MinLength } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { IsValidPhoneNumber } from '../../../common/validators/phone-number.validator';
 
 export class RegisterDto {
   @ApiProperty({ example: 'Ahmed Mohammed Al-Kuwari', description: 'User full name' })
@@ -12,12 +13,10 @@ export class RegisterDto {
   @IsNotEmpty()
   identityNumber: string; // Qatar ID or Residence Permit
 
-  @ApiProperty({ example: '+97412345678', description: 'Phone number in format +974XXXXXXXX' })
+  @ApiProperty({ example: '+97412345678', description: 'Phone number in E.164 format (e.g., +97412345678, +14155552671)' })
   @IsString()
   @IsNotEmpty()
-  @Matches(/^\+974\d{8}$/, {
-    message: 'Phone number must be in format +974XXXXXXXX',
-  })
+  @IsValidPhoneNumber()
   phone: string;
 
   @ApiProperty({ example: 'ahmed@example.com', description: 'User email address', required: false })
