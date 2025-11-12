@@ -33,7 +33,7 @@ async function updateAdminPhones() {
       {
         fullName: 'Super Admin',
         identityNumber: '28011111111',
-        phone: '+97450123456',
+        phone: '+97411111111',
         email: 'admin@qdp.qa',
         password: hashedPassword,
         userType: 'super_admin',
@@ -65,7 +65,7 @@ async function updateAdminPhones() {
       {
         fullName: 'Admin Manager',
         identityNumber: '28022222222',
-        phone: '+97455987654',
+        phone: '+97422222222',
         email: 'manager@qdp.qa',
         password: hashedPassword,
         userType: 'admin',
@@ -101,8 +101,8 @@ async function updateAdminPhones() {
     console.log(`✅ Created ${insertResult.insertedCount} new admin users`);
 
     console.log('\n📋 Admin Login Credentials:');
-    console.log('   - Super Admin: +97450123456 / Admin123!');
-    console.log('   - Admin Manager: +97455987654 / Admin123!');
+    console.log('   - Super Admin: +97411111111 / Admin123!');
+    console.log('   - Admin Manager: +97422222222 / Admin123!');
     console.log('\n✅ Admin users updated successfully!');
 
     // Close connection
