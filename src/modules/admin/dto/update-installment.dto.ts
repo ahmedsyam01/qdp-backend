@@ -19,6 +19,10 @@ export class MarkInstallmentPaidDto {
   paidAmount: number;
 
   @IsOptional()
+  @IsEnum(['card', 'cash'])
+  paymentMethod?: 'card' | 'cash';
+
+  @IsOptional()
   @IsString()
   paidAt?: string; // ISO date string
 
