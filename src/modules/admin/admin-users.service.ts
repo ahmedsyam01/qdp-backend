@@ -377,4 +377,88 @@ export class AdminUsersService {
       },
     };
   }
+
+  async verifyPhone(id: string, adminId: string) {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new BadRequestException('Invalid user ID');
+    }
+
+    const user = await this.userModel.findById(id);
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    user.phoneVerified = true;
+    await user.save();
+
+    const userObj: any = user.toObject();
+    delete userObj.password;
+    delete userObj.otp;
+    delete userObj.otpExpiry;
+
+    return userObj;
+  }
+
+  async unverifyPhone(id: string, adminId: string) {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new BadRequestException('Invalid user ID');
+    }
+
+    const user = await this.userModel.findById(id);
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    user.phoneVerified = false;
+    await user.save();
+
+    const userObj: any = user.toObject();
+    delete userObj.password;
+    delete userObj.otp;
+    delete userObj.otpExpiry;
+
+    return userObj;
+  }
+
+  async verifyEmail(id: string, adminId: string) {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new BadRequestException('Invalid user ID');
+    }
+
+    const user = await this.userModel.findById(id);
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    user.emailVerified = true;
+    await user.save();
+
+    const userObj: any = user.toObject();
+    delete userObj.password;
+    delete userObj.otp;
+    delete userObj.otpExpiry;
+
+    return userObj;
+  }
+
+  async unverifyEmail(id: string, adminId: string) {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new BadRequestException('Invalid user ID');
+    }
+
+    const user = await this.userModel.findById(id);
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    user.emailVerified = false;
+    await user.save();
+
+    const userObj: any = user.toObject();
+    delete userObj.password;
+    delete userObj.otp;
+    delete userObj.otpExpiry;
+
+    return userObj;
+  }
 }

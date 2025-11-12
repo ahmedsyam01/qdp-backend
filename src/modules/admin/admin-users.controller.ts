@@ -55,6 +55,26 @@ export class AdminUsersController {
     return this.adminUsersService.updateStatus(id, status, req.user.sub);
   }
 
+  @Put(':id/verify-phone')
+  async verifyPhone(@Param('id') id: string, @Request() req: any) {
+    return this.adminUsersService.verifyPhone(id, req.user.sub);
+  }
+
+  @Put(':id/unverify-phone')
+  async unverifyPhone(@Param('id') id: string, @Request() req: any) {
+    return this.adminUsersService.unverifyPhone(id, req.user.sub);
+  }
+
+  @Put(':id/verify-email')
+  async verifyEmail(@Param('id') id: string, @Request() req: any) {
+    return this.adminUsersService.verifyEmail(id, req.user.sub);
+  }
+
+  @Put(':id/unverify-email')
+  async unverifyEmail(@Param('id') id: string, @Request() req: any) {
+    return this.adminUsersService.unverifyEmail(id, req.user.sub);
+  }
+
   @Delete(':id')
   async delete(@Param('id') id: string, @Request() req: any) {
     return this.adminUsersService.softDelete(id, req.user.sub);
