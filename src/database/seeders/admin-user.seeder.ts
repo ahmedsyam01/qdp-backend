@@ -25,7 +25,7 @@ export class AdminUserSeeder {
       {
         fullName: 'Super Admin',
         identityNumber: '28011111111',
-        phone: '+97411111111',
+        phone: '+97450123456',
         email: 'admin@qdp.qa',
         password: hashedPassword,
         userType: 'super_admin',
@@ -55,7 +55,7 @@ export class AdminUserSeeder {
       {
         fullName: 'Admin Manager',
         identityNumber: '28022222222',
-        phone: '+97422222222',
+        phone: '+97455987654',
         email: 'manager@qdp.qa',
         password: hashedPassword,
         userType: 'admin',
@@ -86,7 +86,7 @@ export class AdminUserSeeder {
 
     await this.userModel.insertMany(adminUsers);
     console.log('✅ Admin users seeded successfully (2 admin users)');
-    console.log('   - Super Admin: admin@qdp.qa / Admin123!');
-    console.log('   - Admin Manager: manager@qdp.qa / Admin123!');
+    console.log('   - Super Admin: +97450123456 / Admin123!');
+    console.log('   - Admin Manager: +97455987654 / Admin123!');
   }
 }
